@@ -1,0 +1,26 @@
+<canvas id='tablero' width=500 height=450></canvas>
+<script>
+
+   function polygon(cd,colorBorde,colorRelleno,grosor){
+ctx.beginPath();
+ctx.strokeStyle=colorBorde;
+ctx.fillStyle= colorRelleno;
+ctx.lineWidth=grosor;
+ctx.moveTo(cd[0],cd[1]);
+for (var i = 2; i < cd.length; i+=2)
+    ctx.lineTo(cd[i],cd[i+1]);
+ctx.closePath();
+ctx.stroke();
+ctx.fill();
+}
+
+var c=document.getElementById('tablero')
+var ctx=c.getContext('2d')
+ 
+var letra_m = [10,20,10,60,20,60,20,30,30,45,40,30,40,60,50,60,50,20,40,20,30,30,20,20];
+ 
+ 
+ctx.translate(40, 40); 
+polygon(letra_m,'red','yellow');
+
+</script>
