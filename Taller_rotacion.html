@@ -6,7 +6,7 @@ var ctx=c.getContext("2d");
 
 
 polygon(letra_r,'yellow','red');
-rotateRight(letra_r);
+rotate(letra_r);
 
 function polygon(cd,colorBorde,colorRelleno,grosor)
 {
@@ -23,7 +23,7 @@ ctx.fill();
 }
 
 
-function rotateRight(x)
+function rotate(x)
 {
  ctx.save();
  ctx.translate(30,0);
