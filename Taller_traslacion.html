@@ -1,5 +1,6 @@
 <canvas id='tablero' width=500 height=450></canvas>
 <script>
+var letra_m = [10,20,10,60,20,60,20,30,30,45,40,30,40,60,50,60,50,20,40,20,30,30,20,20];
 
    function polygon(cd,colorBorde,colorRelleno,grosor){
 ctx.beginPath();
@@ -14,13 +15,16 @@ ctx.stroke();
 ctx.fill();
 }
 
+function Traslacion(x,y,z)
+{
+ ctx.save();
+ ctx.translate(y,z);
+ polygon(x,'red','yellow');
+}
 var c=document.getElementById('tablero')
 var ctx=c.getContext('2d')
  
-var letra_m = [10,20,10,60,20,60,20,30,30,45,40,30,40,60,50,60,50,20,40,20,30,30,20,20];
- 
- 
-ctx.translate(40, 40); 
 polygon(letra_m,'red','yellow');
+Traslacion(letra_m,250,350);
 
 </script>
